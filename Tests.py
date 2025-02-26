@@ -1,4 +1,5 @@
 import unittest
+#import (Módulo con la lógica)
 
 class AutomatasTest(unittest.TestCase):
 
@@ -80,11 +81,8 @@ class AutomatasTest(unittest.TestCase):
         probabilidad: float = 3.2
         tiempo_simulacion: int = 50
 
-        resultado_esperado = # ERROR: El orden de la matriz no puede ser 0
-
-        resultado_obtenido = ### Definir lógica
-
-        #Comparar resultados con self.assert...
+        with self.assertRaises(Exception):
+          resultado_esperado = # ERROR: El tiempo de simulación debe ser mayor a cero
 
     def testError2(self):
         orden_matriz: int = 100
@@ -92,11 +90,8 @@ class AutomatasTest(unittest.TestCase):
         probabilidad: float = 5
         tiempo_simulacion: int = 0
 
-        resultado_esperado = # ERROR: El tiempo de simulación debe ser mayor a cero
-
-        resultado_obtenido = ### Definir lógica
-
-        #Comparar resultados con self.assert...
+        with self.assertRaises(Exception):
+          resultado_esperado = # ERROR: El tiempo de simulación debe ser mayor a cero
 
     def testError3(self):
         orden_matriz: int = 50
@@ -104,11 +99,8 @@ class AutomatasTest(unittest.TestCase):
         probabilidad: float = 5
         tiempo_simulacion: int = 5
 
-        resultado_esperado = # ERROR: la población inicial debe ser mayor o igual a 2
-
-        resultado_obtenido = ### Definir lógica
-
-        #Comparar resultados con self.assert...
+        with self.assertRaises(Exception):
+          resultado_esperado = # ERROR: la población inicial debe ser mayor o igual a 2
 
     def testError4(self):
         orden_matriz: int = 60
@@ -116,8 +108,9 @@ class AutomatasTest(unittest.TestCase):
         probabilidad: float = 2.1
         tiempo_simulacion: int = -10
 
-        resultado_esperado = # ERROR: El tiempo de simulación no puede ser negativo
+        with self.assertRaises(Exception):
+          resultado_esperado = # ERROR: El tiempo de simulación no puede ser negativo
 
-        resultado_obtenido = ### Definir lógica
 
-        #Comparar resultados con self.assert...
+if __name__ == "__main__":
+   unittest.main()
